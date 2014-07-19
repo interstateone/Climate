@@ -7,3 +7,4 @@
 //
 
 #import "Xively.h"
+#import "TTTTimeIntervalFormatter.h"

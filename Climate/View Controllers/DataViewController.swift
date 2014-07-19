@@ -15,14 +15,11 @@ class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyMo
     @IBOutlet var lastUpdatedButton: UIButton
     
     let feed = XivelyFeedModel()
-    let lastUpdatedFormatter = NSDateFormatter()
+    let lastUpdatedFormatter = TTTTimeIntervalFormatter()
     let valueFormatter = NSNumberFormatter()
+    var updateLabelTimer: NSTimer?
     
     init(coder aDecoder: NSCoder!)  {
-        lastUpdatedFormatter.dateStyle = .ShortStyle
-        lastUpdatedFormatter.timeStyle = .ShortStyle
-        lastUpdatedFormatter.doesRelativeDateFormatting = true
-        
         valueFormatter.roundingMode = .RoundHalfUp
         valueFormatter.maximumFractionDigits = 0
         valueFormatter.groupingSeparator = " "
@@ -41,25 +38,28 @@ class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyMo
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         _setupFeed()
+        updateLabelTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "_updateLastUpdatedLabel", userInfo: nil, repeats: true);
+        updateLabelTimer!.tolerance = 0.5
     }
     
     override func viewDidDisappear(animated: Bool) {
         _tearDownFeed()
+        updateLabelTimer?.invalidate()
+        updateLabelTimer = nil
     }
     
     // Xively Delegates
     
-    func modelDidSubscribe(model: XivelyModel!) {
-        println("Web socket connected, receiving live updates")
-    }
-    
     func modelUpdatedViaSubscription(model: XivelyModel!) {
+        NSUserDefaults.standardUserDefaults().setValue(NSDate.date(), forKey: DataLastUpdatedKey)
         _updateUI()
+        _updateLastUpdatedLabel()
     }
     
     func modelDidFetch(model: XivelyModel!) {
-        println("Datastream fetched")
+        NSUserDefaults.standardUserDefaults().setValue(NSDate.date(), forKey: DataLastUpdatedKey)
         _updateUI()
+        _updateLastUpdatedLabel()
     }
     
     // UITableViewDataSource
@@ -71,7 +71,7 @@ class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyMo
         cell.nameLabel.text = _humanizeStreamName(stream.info["id"] as NSString)
         let unit = stream.info["unit"] as NSDictionary
         let symbol = unit["symbol"] as NSString
-        cell.valueLabel.text = _formatValue((stream.info["current_value"] as NSString).floatValue, symbol: symbol)
+        cell.valueLabel.attributedText = _formatValue((stream.info["current_value"] as NSString).floatValue, symbol: symbol)
         
         return cell
     }
@@ -84,8 +84,9 @@ class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyMo
     // Actions
     
     @IBAction func fetchFeed(sender: AnyObject?) {
-        feed.fetch()
-        NSUserDefaults.standardUserDefaults().setValue(NSDate.date(), forKey: DataLastUpdatedKey)
+        if !feed.isSubscribed {
+            feed.fetch()
+        }
     }
     
     // Private
@@ -107,17 +108,25 @@ class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyMo
     
     func _updateUI() {
         self.dataTableView.reloadData()
-        if let date = NSUserDefaults.standardUserDefaults().valueForKey(DataLastUpdatedKey) as? NSDate {
-            lastUpdatedButton.setTitle("Last updated: \(lastUpdatedFormatter.stringFromDate(date))", forState: .Normal)
-        }
     }
     
     func _humanizeStreamName(streamName: String) -> String {
         return join(" ", streamName.componentsSeparatedByString("_"))
     }
     
-    func _formatValue(value: Float, symbol: String) -> String {
-        return "\(valueFormatter.stringFromNumber(value)) \(symbol)"
+    func _formatValue(value: Float, symbol: String) -> NSAttributedString {
+        let string = NSMutableAttributedString(string: "\(valueFormatter.stringFromNumber(value)) \(symbol)")
+        string.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor(), range: NSMakeRange(string.length - countElements(symbol), countElements(symbol)))
+        return string
+    }
+    
+    func _updateLastUpdatedLabel() {
+        if feed.isSubscribed {
+            lastUpdatedButton.setTitle("Auto-updating", forState: .Normal)
+        }
+        else if let date = NSUserDefaults.standardUserDefaults().valueForKey(DataLastUpdatedKey) as? NSDate {
+            lastUpdatedButton.setTitle("Last updated \(lastUpdatedFormatter.stringForTimeIntervalFromDate(NSDate.date(), toDate: date))", forState: .Normal)
+        }
     }
 }
 
