@@ -7,11 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA32F809197A087C00B8CAD6 /* CLIDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA32F808197A087C00B8CAD6 /* CLIDataCell.swift */; };
 		CA591AB41979E44B002555AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA591AB31979E44B002555AF /* AppDelegate.swift */; };
-		CA591AB61979E44B002555AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA591AB51979E44B002555AF /* ViewController.swift */; };
+		CA591AB61979E44B002555AF /* CLIDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA591AB51979E44B002555AF /* CLIDataViewController.swift */; };
 		CA591AB91979E44B002555AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA591AB71979E44B002555AF /* Main.storyboard */; };
 		CA591ABB1979E44B002555AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA591ABA1979E44B002555AF /* Images.xcassets */; };
 		CA591AC71979E44B002555AF /* ClimateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA591AC61979E44B002555AF /* ClimateTests.swift */; };
+		CA591AEE1979E98E002555AF /* XivelyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591AD61979E98E002555AF /* XivelyAPI.m */; };
+		CA591AEF1979E98E002555AF /* XivelyDatapointCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591AD81979E98E002555AF /* XivelyDatapointCollection.m */; };
+		CA591AF01979E98E002555AF /* XivelyDatapointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591ADB1979E98E002555AF /* XivelyDatapointModel.m */; };
+		CA591AF11979E98E002555AF /* XivelyDatastreamCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591ADD1979E98E002555AF /* XivelyDatastreamCollection.m */; };
+		CA591AF21979E98E002555AF /* XivelyDatastreamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591ADF1979E98E002555AF /* XivelyDatastreamModel.m */; };
+		CA591AF31979E98E002555AF /* XivelyFeedCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591AE11979E98E002555AF /* XivelyFeedCollection.m */; };
+		CA591AF41979E98E002555AF /* XivelyFeedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591AE41979E98E002555AF /* XivelyFeedModel.m */; };
+		CA591AF51979E98E002555AF /* XivelyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591AE61979E98E002555AF /* XivelyModel.m */; };
+		CA591AF61979E98E002555AF /* XivelyRequestable.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591AE91979E98E002555AF /* XivelyRequestable.m */; };
+		CA591AF71979E98E002555AF /* XivelySubscribable.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591AEB1979E98E002555AF /* XivelySubscribable.m */; };
+		CA8742D41979F577001DDAB2 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BD11979EFD1002555AF /* AFHTTPClient.m */; };
+		CA8742D61979F577001DDAB2 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BD31979EFD1002555AF /* AFHTTPRequestOperation.m */; };
+		CA8742D81979F577001DDAB2 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BD51979EFD1002555AF /* AFImageRequestOperation.m */; };
+		CA8742DA1979F577001DDAB2 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BD71979EFD1002555AF /* AFJSONRequestOperation.m */; };
+		CA8742DC1979F577001DDAB2 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BD91979EFD1002555AF /* AFNetworkActivityIndicatorManager.m */; };
+		CA8742DF1979F577001DDAB2 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BDC1979EFD1002555AF /* AFPropertyListRequestOperation.m */; };
+		CA8742E11979F577001DDAB2 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BDE1979EFD1002555AF /* AFURLConnectionOperation.m */; };
+		CA8742E31979F577001DDAB2 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BE01979EFD1002555AF /* AFXMLRequestOperation.m */; };
+		CA8742E51979F577001DDAB2 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BE21979EFD1002555AF /* UIImageView+AFNetworking.m */; };
+		CA8742E71979F577001DDAB2 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591C1C1979F04E002555AF /* SRWebSocket.m */; };
+		CA8742E91979F603001DDAB2 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8742E81979F603001DDAB2 /* libicucore.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,16 +46,78 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CA591B191979EAA9002555AF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		CA32F808197A087C00B8CAD6 /* CLIDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CLIDataCell.swift; path = Cells/CLIDataCell.swift; sourceTree = "<group>"; };
 		CA591AAE1979E44B002555AF /* Climate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Climate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA591AB21979E44B002555AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA591AB31979E44B002555AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CA591AB51979E44B002555AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CA591AB51979E44B002555AF /* CLIDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLIDataViewController.swift; sourceTree = "<group>"; };
 		CA591AB81979E44B002555AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA591ABA1979E44B002555AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CA591AC01979E44B002555AF /* ClimateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClimateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA591AC51979E44B002555AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA591AC61979E44B002555AF /* ClimateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateTests.swift; sourceTree = "<group>"; };
+		CA591AD41979E98E002555AF /* Xively.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Xively.h; sourceTree = "<group>"; };
+		CA591AD51979E98E002555AF /* XivelyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XivelyAPI.h; sourceTree = "<group>"; };
+		CA591AD61979E98E002555AF /* XivelyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XivelyAPI.m; sourceTree = "<group>"; };
+		CA591AD71979E98E002555AF /* XivelyDatapointCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XivelyDatapointCollection.h; sourceTree = "<group>"; };
+		CA591AD81979E98E002555AF /* XivelyDatapointCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XivelyDatapointCollection.m; sourceTree = "<group>"; };
+		CA591AD91979E98E002555AF /* XivelyDatapointCollectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XivelyDatapointCollectionDelegate.h; sourceTree = "<group>"; };
+		CA591ADA1979E98E002555AF /* XivelyDatapointModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XivelyDatapointModel.h; sourceTree = "<group>"; };
+		CA591ADB1979E98E002555AF /* XivelyDatapointModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XivelyDatapointModel.m; sourceTree = "<group>"; };
+		CA591ADC1979E98E002555AF /* XivelyDatastreamCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XivelyDatastreamCollection.h; sourceTree = "<group>"; };
+		CA591ADD1979E98E002555AF /* XivelyDatastreamCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XivelyDatastreamCollection.m; sourceTree = "<group>"; };
+		CA591ADE1979E98E002555AF /* XivelyDatastreamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XivelyDatastreamModel.h; sourceTree = "<group>"; };
+		CA591ADF1979E98E002555AF /* XivelyDatastreamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XivelyDatastreamModel.m; sourceTree = "<group>"; };
+		CA591AE01979E98E002555AF /* XivelyFeedCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XivelyFeedCollection.h; sourceTree = "<group>"; };
+		CA591AE11979E98E002555AF /* XivelyFeedCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XivelyFeedCollection.m; sourceTree = "<group>"; };
+		CA591AE21979E98E002555AF /* XivelyFeedCollectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XivelyFeedCollectionDelegate.h; sourceTree = "<group>"; };
+		CA591AE31979E98E002555AF /* XivelyFeedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XivelyFeedModel.h; sourceTree = "<group>"; };
+		CA591AE41979E98E002555AF /* XivelyFeedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XivelyFeedModel.m; sourceTree = "<group>"; };
+		CA591AE51979E98E002555AF /* XivelyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XivelyModel.h; sourceTree = "<group>"; };
+		CA591AE61979E98E002555AF /* XivelyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XivelyModel.m; sourceTree = "<group>"; };
+		CA591AE71979E98E002555AF /* XivelyModelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XivelyModelDelegate.h; sourceTree = "<group>"; };
+		CA591AE81979E98E002555AF /* XivelyRequestable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XivelyRequestable.h; sourceTree = "<group>"; };
+		CA591AE91979E98E002555AF /* XivelyRequestable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XivelyRequestable.m; sourceTree = "<group>"; };
+		CA591AEA1979E98E002555AF /* XivelySubscribable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XivelySubscribable.h; sourceTree = "<group>"; };
+		CA591AEB1979E98E002555AF /* XivelySubscribable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XivelySubscribable.m; sourceTree = "<group>"; };
+		CA591AEC1979E98E002555AF /* XivelySubscribableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XivelySubscribableDelegate.h; sourceTree = "<group>"; };
+		CA591BD01979EFD1002555AF /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		CA591BD11979EFD1002555AF /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
+		CA591BD21979EFD1002555AF /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		CA591BD31979EFD1002555AF /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		CA591BD41979EFD1002555AF /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		CA591BD51979EFD1002555AF /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
+		CA591BD61979EFD1002555AF /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		CA591BD71979EFD1002555AF /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		CA591BD81979EFD1002555AF /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		CA591BD91979EFD1002555AF /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		CA591BDA1979EFD1002555AF /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		CA591BDB1979EFD1002555AF /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		CA591BDC1979EFD1002555AF /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		CA591BDD1979EFD1002555AF /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		CA591BDE1979EFD1002555AF /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		CA591BDF1979EFD1002555AF /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		CA591BE01979EFD1002555AF /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
+		CA591BE11979EFD1002555AF /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		CA591BE21979EFD1002555AF /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		CA591C1B1979F04E002555AF /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		CA591C1C1979F04E002555AF /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
+		CA591C271979F4E1002555AF /* Climate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Climate-Bridging-Header.h"; sourceTree = "<group>"; };
+		CA8742E81979F603001DDAB2 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8742E91979F603001DDAB2 /* libicucore.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,9 +161,12 @@
 			isa = PBXGroup;
 			children = (
 				CA591AB31979E44B002555AF /* AppDelegate.swift */,
-				CA591AB51979E44B002555AF /* ViewController.swift */,
 				CA591AB71979E44B002555AF /* Main.storyboard */,
+				CA9D4128197A158A002932EE /* View Controllers */,
+				CA9D4127197A14C7002932EE /* Cells */,
 				CA591ABA1979E44B002555AF /* Images.xcassets */,
+				CA591C271979F4E1002555AF /* Climate-Bridging-Header.h */,
+				CA591AD11979E98E002555AF /* Libraries */,
 				CA591AB11979E44B002555AF /* Supporting Files */,
 			);
 			path = Climate;
@@ -109,6 +197,104 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CA591AD11979E98E002555AF /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				CA8742E81979F603001DDAB2 /* libicucore.dylib */,
+				CA591AFE1979EAA9002555AF /* Xively */,
+				CA591B681979EEC8002555AF /* AFNetworking */,
+				CA591BFC1979F039002555AF /* SocketRocket */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		CA591AFE1979EAA9002555AF /* Xively */ = {
+			isa = PBXGroup;
+			children = (
+				CA591AD41979E98E002555AF /* Xively.h */,
+				CA591AD51979E98E002555AF /* XivelyAPI.h */,
+				CA591AD61979E98E002555AF /* XivelyAPI.m */,
+				CA591AD71979E98E002555AF /* XivelyDatapointCollection.h */,
+				CA591AD81979E98E002555AF /* XivelyDatapointCollection.m */,
+				CA591AD91979E98E002555AF /* XivelyDatapointCollectionDelegate.h */,
+				CA591ADA1979E98E002555AF /* XivelyDatapointModel.h */,
+				CA591ADB1979E98E002555AF /* XivelyDatapointModel.m */,
+				CA591ADC1979E98E002555AF /* XivelyDatastreamCollection.h */,
+				CA591ADD1979E98E002555AF /* XivelyDatastreamCollection.m */,
+				CA591ADE1979E98E002555AF /* XivelyDatastreamModel.h */,
+				CA591ADF1979E98E002555AF /* XivelyDatastreamModel.m */,
+				CA591AE01979E98E002555AF /* XivelyFeedCollection.h */,
+				CA591AE11979E98E002555AF /* XivelyFeedCollection.m */,
+				CA591AE21979E98E002555AF /* XivelyFeedCollectionDelegate.h */,
+				CA591AE31979E98E002555AF /* XivelyFeedModel.h */,
+				CA591AE41979E98E002555AF /* XivelyFeedModel.m */,
+				CA591AE51979E98E002555AF /* XivelyModel.h */,
+				CA591AE61979E98E002555AF /* XivelyModel.m */,
+				CA591AE71979E98E002555AF /* XivelyModelDelegate.h */,
+				CA591AE81979E98E002555AF /* XivelyRequestable.h */,
+				CA591AE91979E98E002555AF /* XivelyRequestable.m */,
+				CA591AEA1979E98E002555AF /* XivelySubscribable.h */,
+				CA591AEB1979E98E002555AF /* XivelySubscribable.m */,
+				CA591AEC1979E98E002555AF /* XivelySubscribableDelegate.h */,
+			);
+			name = Xively;
+			path = Climate/Libraries/XivelyObjectiveC;
+			sourceTree = SOURCE_ROOT;
+		};
+		CA591B681979EEC8002555AF /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				CA591BD01979EFD1002555AF /* AFHTTPClient.h */,
+				CA591BD11979EFD1002555AF /* AFHTTPClient.m */,
+				CA591BD21979EFD1002555AF /* AFHTTPRequestOperation.h */,
+				CA591BD31979EFD1002555AF /* AFHTTPRequestOperation.m */,
+				CA591BD41979EFD1002555AF /* AFImageRequestOperation.h */,
+				CA591BD51979EFD1002555AF /* AFImageRequestOperation.m */,
+				CA591BD61979EFD1002555AF /* AFJSONRequestOperation.h */,
+				CA591BD71979EFD1002555AF /* AFJSONRequestOperation.m */,
+				CA591BD81979EFD1002555AF /* AFNetworkActivityIndicatorManager.h */,
+				CA591BD91979EFD1002555AF /* AFNetworkActivityIndicatorManager.m */,
+				CA591BDA1979EFD1002555AF /* AFNetworking.h */,
+				CA591BDB1979EFD1002555AF /* AFPropertyListRequestOperation.h */,
+				CA591BDC1979EFD1002555AF /* AFPropertyListRequestOperation.m */,
+				CA591BDD1979EFD1002555AF /* AFURLConnectionOperation.h */,
+				CA591BDE1979EFD1002555AF /* AFURLConnectionOperation.m */,
+				CA591BDF1979EFD1002555AF /* AFXMLRequestOperation.h */,
+				CA591BE01979EFD1002555AF /* AFXMLRequestOperation.m */,
+				CA591BE11979EFD1002555AF /* UIImageView+AFNetworking.h */,
+				CA591BE21979EFD1002555AF /* UIImageView+AFNetworking.m */,
+			);
+			name = AFNetworking;
+			path = Climate/Libraries/AFNetworking;
+			sourceTree = SOURCE_ROOT;
+		};
+		CA591BFC1979F039002555AF /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				CA591C1B1979F04E002555AF /* SRWebSocket.h */,
+				CA591C1C1979F04E002555AF /* SRWebSocket.m */,
+			);
+			name = SocketRocket;
+			path = Climate/Libraries/SocketRocket;
+			sourceTree = SOURCE_ROOT;
+		};
+		CA9D4127197A14C7002932EE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CA32F808197A087C00B8CAD6 /* CLIDataCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		CA9D4128197A158A002932EE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA591AB51979E44B002555AF /* CLIDataViewController.swift */,
+			);
+			name = "View Controllers";
+			path = "Climate/View Controllers";
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,6 +305,7 @@
 				CA591AAA1979E44B002555AF /* Sources */,
 				CA591AAB1979E44B002555AF /* Frameworks */,
 				CA591AAC1979E44B002555AF /* Resources */,
+				CA591B191979EAA9002555AF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -208,8 +395,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA591AB61979E44B002555AF /* ViewController.swift in Sources */,
+				CA8742D41979F577001DDAB2 /* AFHTTPClient.m in Sources */,
+				CA8742D61979F577001DDAB2 /* AFHTTPRequestOperation.m in Sources */,
+				CA32F809197A087C00B8CAD6 /* CLIDataCell.swift in Sources */,
+				CA8742D81979F577001DDAB2 /* AFImageRequestOperation.m in Sources */,
+				CA8742DA1979F577001DDAB2 /* AFJSONRequestOperation.m in Sources */,
+				CA8742DC1979F577001DDAB2 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				CA8742DF1979F577001DDAB2 /* AFPropertyListRequestOperation.m in Sources */,
+				CA8742E11979F577001DDAB2 /* AFURLConnectionOperation.m in Sources */,
+				CA8742E31979F577001DDAB2 /* AFXMLRequestOperation.m in Sources */,
+				CA8742E51979F577001DDAB2 /* UIImageView+AFNetworking.m in Sources */,
+				CA8742E71979F577001DDAB2 /* SRWebSocket.m in Sources */,
+				CA591AF61979E98E002555AF /* XivelyRequestable.m in Sources */,
+				CA591AF71979E98E002555AF /* XivelySubscribable.m in Sources */,
+				CA591AF01979E98E002555AF /* XivelyDatapointModel.m in Sources */,
+				CA591AB61979E44B002555AF /* CLIDataViewController.swift in Sources */,
+				CA591AF51979E98E002555AF /* XivelyModel.m in Sources */,
+				CA591AF31979E98E002555AF /* XivelyFeedCollection.m in Sources */,
+				CA591AEE1979E98E002555AF /* XivelyAPI.m in Sources */,
 				CA591AB41979E44B002555AF /* AppDelegate.swift in Sources */,
+				CA591AF21979E98E002555AF /* XivelyDatastreamModel.m in Sources */,
+				CA591AF41979E98E002555AF /* XivelyFeedModel.m in Sources */,
+				CA591AF11979E98E002555AF /* XivelyDatastreamCollection.m in Sources */,
+				CA591AEF1979E98E002555AF /* XivelyDatapointCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,8 +534,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Climate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Climate/Climate-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -337,8 +547,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Climate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Climate/Climate-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -395,6 +607,7 @@
 				CA591ACC1979E44B002555AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CA591ACD1979E44B002555AF /* Build configuration list for PBXNativeTarget "ClimateTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +616,7 @@
 				CA591ACF1979E44B002555AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
