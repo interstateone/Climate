@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B37FBD91FF44266A51E20CB /* libPods-Climate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E503AE8B6FBA42E79B4073F1 /* libPods-Climate.a */; };
 		CA32F809197A087C00B8CAD6 /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA32F808197A087C00B8CAD6 /* DataCell.swift */; };
 		CA591AB41979E44B002555AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA591AB31979E44B002555AF /* AppDelegate.swift */; };
 		CA591AB61979E44B002555AF /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA591AB51979E44B002555AF /* DataViewController.swift */; };
@@ -23,16 +24,6 @@
 		CA591AF51979E98E002555AF /* XivelyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591AE61979E98E002555AF /* XivelyModel.m */; };
 		CA591AF61979E98E002555AF /* XivelyRequestable.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591AE91979E98E002555AF /* XivelyRequestable.m */; };
 		CA591AF71979E98E002555AF /* XivelySubscribable.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591AEB1979E98E002555AF /* XivelySubscribable.m */; };
-		CA8742D41979F577001DDAB2 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BD11979EFD1002555AF /* AFHTTPClient.m */; };
-		CA8742D61979F577001DDAB2 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BD31979EFD1002555AF /* AFHTTPRequestOperation.m */; };
-		CA8742D81979F577001DDAB2 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BD51979EFD1002555AF /* AFImageRequestOperation.m */; };
-		CA8742DA1979F577001DDAB2 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BD71979EFD1002555AF /* AFJSONRequestOperation.m */; };
-		CA8742DC1979F577001DDAB2 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BD91979EFD1002555AF /* AFNetworkActivityIndicatorManager.m */; };
-		CA8742DF1979F577001DDAB2 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BDC1979EFD1002555AF /* AFPropertyListRequestOperation.m */; };
-		CA8742E11979F577001DDAB2 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BDE1979EFD1002555AF /* AFURLConnectionOperation.m */; };
-		CA8742E31979F577001DDAB2 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BE01979EFD1002555AF /* AFXMLRequestOperation.m */; };
-		CA8742E51979F577001DDAB2 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BE21979EFD1002555AF /* UIImageView+AFNetworking.m */; };
-		CA8742E71979F577001DDAB2 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591C1C1979F04E002555AF /* SRWebSocket.m */; };
 		CA8742E91979F603001DDAB2 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8742E81979F603001DDAB2 /* libicucore.dylib */; };
 		CA9D412A197A1966002932EE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D4129197A1966002932EE /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C04ED0E93A7F42B1B9062F35 /* Pods-Climate.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Climate.xcconfig"; path = "Pods/Pods-Climate.xcconfig"; sourceTree = "<group>"; };
 		CA32F808197A087C00B8CAD6 /* DataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataCell.swift; path = Cells/DataCell.swift; sourceTree = "<group>"; };
 		CA591AAE1979E44B002555AF /* Climate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Climate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA591AB21979E44B002555AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,30 +88,10 @@
 		CA591AEA1979E98E002555AF /* XivelySubscribable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XivelySubscribable.h; sourceTree = "<group>"; };
 		CA591AEB1979E98E002555AF /* XivelySubscribable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XivelySubscribable.m; sourceTree = "<group>"; };
 		CA591AEC1979E98E002555AF /* XivelySubscribableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XivelySubscribableDelegate.h; sourceTree = "<group>"; };
-		CA591BD01979EFD1002555AF /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
-		CA591BD11979EFD1002555AF /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
-		CA591BD21979EFD1002555AF /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		CA591BD31979EFD1002555AF /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		CA591BD41979EFD1002555AF /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
-		CA591BD51979EFD1002555AF /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
-		CA591BD61979EFD1002555AF /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
-		CA591BD71979EFD1002555AF /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
-		CA591BD81979EFD1002555AF /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
-		CA591BD91979EFD1002555AF /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
-		CA591BDA1979EFD1002555AF /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		CA591BDB1979EFD1002555AF /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
-		CA591BDC1979EFD1002555AF /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
-		CA591BDD1979EFD1002555AF /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		CA591BDE1979EFD1002555AF /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		CA591BDF1979EFD1002555AF /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
-		CA591BE01979EFD1002555AF /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
-		CA591BE11979EFD1002555AF /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		CA591BE21979EFD1002555AF /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		CA591C1B1979F04E002555AF /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
-		CA591C1C1979F04E002555AF /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
 		CA591C271979F4E1002555AF /* Climate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Climate-Bridging-Header.h"; sourceTree = "<group>"; };
 		CA8742E81979F603001DDAB2 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		CA9D4129197A1966002932EE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E503AE8B6FBA42E79B4073F1 /* libPods-Climate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Climate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA8742E91979F603001DDAB2 /* libicucore.dylib in Frameworks */,
+				5B37FBD91FF44266A51E20CB /* libPods-Climate.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,12 +114,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6DD5723E822E4EE9B4935E5B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E503AE8B6FBA42E79B4073F1 /* libPods-Climate.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CA591AA51979E44B002555AF = {
 			isa = PBXGroup;
 			children = (
 				CA591AB01979E44B002555AF /* Climate */,
 				CA591AC31979E44B002555AF /* ClimateTests */,
 				CA591AAF1979E44B002555AF /* Products */,
+				C04ED0E93A7F42B1B9062F35 /* Pods-Climate.xcconfig */,
+				6DD5723E822E4EE9B4935E5B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,8 +187,6 @@
 			children = (
 				CA8742E81979F603001DDAB2 /* libicucore.dylib */,
 				CA591AFE1979EAA9002555AF /* Xively */,
-				CA591B681979EEC8002555AF /* AFNetworking */,
-				CA591BFC1979F039002555AF /* SocketRocket */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -243,43 +224,6 @@
 			path = Climate/Libraries/XivelyObjectiveC;
 			sourceTree = SOURCE_ROOT;
 		};
-		CA591B681979EEC8002555AF /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				CA591BD01979EFD1002555AF /* AFHTTPClient.h */,
-				CA591BD11979EFD1002555AF /* AFHTTPClient.m */,
-				CA591BD21979EFD1002555AF /* AFHTTPRequestOperation.h */,
-				CA591BD31979EFD1002555AF /* AFHTTPRequestOperation.m */,
-				CA591BD41979EFD1002555AF /* AFImageRequestOperation.h */,
-				CA591BD51979EFD1002555AF /* AFImageRequestOperation.m */,
-				CA591BD61979EFD1002555AF /* AFJSONRequestOperation.h */,
-				CA591BD71979EFD1002555AF /* AFJSONRequestOperation.m */,
-				CA591BD81979EFD1002555AF /* AFNetworkActivityIndicatorManager.h */,
-				CA591BD91979EFD1002555AF /* AFNetworkActivityIndicatorManager.m */,
-				CA591BDA1979EFD1002555AF /* AFNetworking.h */,
-				CA591BDB1979EFD1002555AF /* AFPropertyListRequestOperation.h */,
-				CA591BDC1979EFD1002555AF /* AFPropertyListRequestOperation.m */,
-				CA591BDD1979EFD1002555AF /* AFURLConnectionOperation.h */,
-				CA591BDE1979EFD1002555AF /* AFURLConnectionOperation.m */,
-				CA591BDF1979EFD1002555AF /* AFXMLRequestOperation.h */,
-				CA591BE01979EFD1002555AF /* AFXMLRequestOperation.m */,
-				CA591BE11979EFD1002555AF /* UIImageView+AFNetworking.h */,
-				CA591BE21979EFD1002555AF /* UIImageView+AFNetworking.m */,
-			);
-			name = AFNetworking;
-			path = Climate/Libraries/AFNetworking;
-			sourceTree = SOURCE_ROOT;
-		};
-		CA591BFC1979F039002555AF /* SocketRocket */ = {
-			isa = PBXGroup;
-			children = (
-				CA591C1B1979F04E002555AF /* SRWebSocket.h */,
-				CA591C1C1979F04E002555AF /* SRWebSocket.m */,
-			);
-			name = SocketRocket;
-			path = Climate/Libraries/SocketRocket;
-			sourceTree = SOURCE_ROOT;
-		};
 		CA9D4127197A14C7002932EE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,10 +249,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA591ACA1979E44B002555AF /* Build configuration list for PBXNativeTarget "Climate" */;
 			buildPhases = (
+				67C890984E5A4B1EAE6171AA /* Check Pods Manifest.lock */,
 				CA591AAA1979E44B002555AF /* Sources */,
 				CA591AAB1979E44B002555AF /* Frameworks */,
 				CA591AAC1979E44B002555AF /* Resources */,
 				CA591B191979EAA9002555AF /* Embed Frameworks */,
+				3505387F4C074181BE781F76 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -393,23 +339,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3505387F4C074181BE781F76 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Climate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67C890984E5A4B1EAE6171AA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CA591AAA1979E44B002555AF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA8742D41979F577001DDAB2 /* AFHTTPClient.m in Sources */,
-				CA8742D61979F577001DDAB2 /* AFHTTPRequestOperation.m in Sources */,
 				CA9D412A197A1966002932EE /* SettingsViewController.swift in Sources */,
 				CA32F809197A087C00B8CAD6 /* DataCell.swift in Sources */,
-				CA8742D81979F577001DDAB2 /* AFImageRequestOperation.m in Sources */,
-				CA8742DA1979F577001DDAB2 /* AFJSONRequestOperation.m in Sources */,
-				CA8742DC1979F577001DDAB2 /* AFNetworkActivityIndicatorManager.m in Sources */,
-				CA8742DF1979F577001DDAB2 /* AFPropertyListRequestOperation.m in Sources */,
-				CA8742E11979F577001DDAB2 /* AFURLConnectionOperation.m in Sources */,
-				CA8742E31979F577001DDAB2 /* AFXMLRequestOperation.m in Sources */,
-				CA8742E51979F577001DDAB2 /* UIImageView+AFNetworking.m in Sources */,
-				CA8742E71979F577001DDAB2 /* SRWebSocket.m in Sources */,
 				CA591AF61979E98E002555AF /* XivelyRequestable.m in Sources */,
 				CA591AF71979E98E002555AF /* XivelySubscribable.m in Sources */,
 				CA591AF01979E98E002555AF /* XivelyDatapointModel.m in Sources */,
@@ -534,6 +503,7 @@
 		};
 		CA591ACB1979E44B002555AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C04ED0E93A7F42B1B9062F35 /* Pods-Climate.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -547,6 +517,7 @@
 		};
 		CA591ACC1979E44B002555AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C04ED0E93A7F42B1B9062F35 /* Pods-Climate.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
