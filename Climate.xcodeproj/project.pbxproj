@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CA32F809197A087C00B8CAD6 /* CLIDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA32F808197A087C00B8CAD6 /* CLIDataCell.swift */; };
 		CA591AB41979E44B002555AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA591AB31979E44B002555AF /* AppDelegate.swift */; };
-		CA591AB61979E44B002555AF /* CLIDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA591AB51979E44B002555AF /* CLIDataViewController.swift */; };
+		CA591AB61979E44B002555AF /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA591AB51979E44B002555AF /* DataViewController.swift */; };
 		CA591AB91979E44B002555AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA591AB71979E44B002555AF /* Main.storyboard */; };
 		CA591ABB1979E44B002555AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA591ABA1979E44B002555AF /* Images.xcassets */; };
 		CA591AC71979E44B002555AF /* ClimateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA591AC61979E44B002555AF /* ClimateTests.swift */; };
@@ -64,7 +64,7 @@
 		CA591AAE1979E44B002555AF /* Climate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Climate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA591AB21979E44B002555AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA591AB31979E44B002555AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CA591AB51979E44B002555AF /* CLIDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLIDataViewController.swift; sourceTree = "<group>"; };
+		CA591AB51979E44B002555AF /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		CA591AB81979E44B002555AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA591ABA1979E44B002555AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CA591AC01979E44B002555AF /* ClimateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClimateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,7 +289,7 @@
 		CA9D4128197A158A002932EE /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CA591AB51979E44B002555AF /* CLIDataViewController.swift */,
+				CA591AB51979E44B002555AF /* DataViewController.swift */,
 			);
 			name = "View Controllers";
 			path = "Climate/View Controllers";
@@ -409,7 +409,7 @@
 				CA591AF61979E98E002555AF /* XivelyRequestable.m in Sources */,
 				CA591AF71979E98E002555AF /* XivelySubscribable.m in Sources */,
 				CA591AF01979E98E002555AF /* XivelyDatapointModel.m in Sources */,
-				CA591AB61979E44B002555AF /* CLIDataViewController.swift in Sources */,
+				CA591AB61979E44B002555AF /* DataViewController.swift in Sources */,
 				CA591AF51979E98E002555AF /* XivelyModel.m in Sources */,
 				CA591AF31979E98E002555AF /* XivelyFeedCollection.m in Sources */,
 				CA591AEE1979E98E002555AF /* XivelyAPI.m in Sources */,
