@@ -65,7 +65,7 @@ class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyMo
     // UITableViewDataSource
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell: CLIDataCell = tableView.dequeueReusableCellWithIdentifier("CLIDataCell", forIndexPath: indexPath) as CLIDataCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("DataCell", forIndexPath: indexPath) as DataCell
         
         let stream = self.feed.datastreamCollection.datastreams[indexPath.row] as XivelyDatastreamModel
         cell.nameLabel.text = _humanizeStreamName(stream.info["id"] as NSString)
@@ -107,9 +107,9 @@ class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyMo
     
     func _updateUI() {
         self.dataTableView.reloadData()
-//        if let date = NSUserDefaults.standardUserDefaults().valueForKey(DataLastUpdatedKey) as? NSDate {
-//            lastUpdatedButton.titleLabel.text = "Last updated: \(lastUpdatedFormatter.stringFromDate(date))"
-//        }
+        if let date = NSUserDefaults.standardUserDefaults().valueForKey(DataLastUpdatedKey) as? NSDate {
+            lastUpdatedButton.setTitle("Last updated: \(lastUpdatedFormatter.stringFromDate(date))", forState: .Normal)
+        }
     }
     
     func _humanizeStreamName(streamName: String) -> String {

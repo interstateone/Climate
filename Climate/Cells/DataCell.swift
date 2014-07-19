@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CLIDataCell: UITableViewCell {
+class DataCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel
     @IBOutlet var valueLabel: UILabel
 }

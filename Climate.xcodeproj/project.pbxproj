@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA32F809197A087C00B8CAD6 /* CLIDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA32F808197A087C00B8CAD6 /* CLIDataCell.swift */; };
+		CA32F809197A087C00B8CAD6 /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA32F808197A087C00B8CAD6 /* DataCell.swift */; };
 		CA591AB41979E44B002555AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA591AB31979E44B002555AF /* AppDelegate.swift */; };
 		CA591AB61979E44B002555AF /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA591AB51979E44B002555AF /* DataViewController.swift */; };
 		CA591AB91979E44B002555AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA591AB71979E44B002555AF /* Main.storyboard */; };
@@ -34,6 +34,7 @@
 		CA8742E51979F577001DDAB2 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591BE21979EFD1002555AF /* UIImageView+AFNetworking.m */; };
 		CA8742E71979F577001DDAB2 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591C1C1979F04E002555AF /* SRWebSocket.m */; };
 		CA8742E91979F603001DDAB2 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8742E81979F603001DDAB2 /* libicucore.dylib */; };
+		CA9D412A197A1966002932EE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D4129197A1966002932EE /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +61,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CA32F808197A087C00B8CAD6 /* CLIDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CLIDataCell.swift; path = Cells/CLIDataCell.swift; sourceTree = "<group>"; };
+		CA32F808197A087C00B8CAD6 /* DataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataCell.swift; path = Cells/DataCell.swift; sourceTree = "<group>"; };
 		CA591AAE1979E44B002555AF /* Climate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Climate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA591AB21979E44B002555AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA591AB31979E44B002555AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +119,7 @@
 		CA591C1C1979F04E002555AF /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
 		CA591C271979F4E1002555AF /* Climate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Climate-Bridging-Header.h"; sourceTree = "<group>"; };
 		CA8742E81979F603001DDAB2 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		CA9D4129197A1966002932EE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,7 +283,7 @@
 		CA9D4127197A14C7002932EE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				CA32F808197A087C00B8CAD6 /* CLIDataCell.swift */,
+				CA32F808197A087C00B8CAD6 /* DataCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -290,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				CA591AB51979E44B002555AF /* DataViewController.swift */,
+				CA9D4129197A1966002932EE /* SettingsViewController.swift */,
 			);
 			name = "View Controllers";
 			path = "Climate/View Controllers";
@@ -397,7 +400,8 @@
 			files = (
 				CA8742D41979F577001DDAB2 /* AFHTTPClient.m in Sources */,
 				CA8742D61979F577001DDAB2 /* AFHTTPRequestOperation.m in Sources */,
-				CA32F809197A087C00B8CAD6 /* CLIDataCell.swift in Sources */,
+				CA9D412A197A1966002932EE /* SettingsViewController.swift in Sources */,
+				CA32F809197A087C00B8CAD6 /* DataCell.swift in Sources */,
 				CA8742D81979F577001DDAB2 /* AFImageRequestOperation.m in Sources */,
 				CA8742DA1979F577001DDAB2 /* AFJSONRequestOperation.m in Sources */,
 				CA8742DC1979F577001DDAB2 /* AFNetworkActivityIndicatorManager.m in Sources */,

@@ -13,14 +13,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
-        XivelyAPI.defaultAPI().apiKey = "MW49RcKFip8v8oxaZ7BQsfhE42FBhThL42lPuQFoGyZBe66g"
-        
+        _setupAppearance()
+        _setupDefaults()
+        XivelyAPI.defaultAPI().apiKey = NSUserDefaults.standardUserDefaults().valueForKey(SettingsAPIKeyKey) as NSString
+
+        return true
+    }
+    
+    // Private
+    
+    func _setupAppearance() {
         let titleBarAttributes = NSMutableDictionary(dictionary:UINavigationBar.appearance().titleTextAttributes)
         titleBarAttributes[NSFontAttributeName] = UIFont(name:"AvenirNext-Bold", size:16)
         titleBarAttributes[NSForegroundColorAttributeName] = UIColor.lightGrayColor()
         UINavigationBar.appearance().titleTextAttributes = titleBarAttributes;
-
-        return true
+        
+        let barButtonAttributes = NSMutableDictionary(dictionary:UIBarButtonItem.appearance().titleTextAttributesForState(.Normal))
+        barButtonAttributes[NSFontAttributeName] = UIFont(name:"Avenir Next", size:16)
+        barButtonAttributes[NSForegroundColorAttributeName] = UIColor.lightGrayColor()
+        UIBarButtonItem.appearance().setTitleTextAttributes(barButtonAttributes, forState: .Normal)
+    }
+    
+    func _setupDefaults() {
+        NSUserDefaults.standardUserDefaults().registerDefaults([SettingsAPIKeyKey: "MW49RcKFip8v8oxaZ7BQsfhE42FBhThL42lPuQFoGyZBe66g", SettingsFeedIDKey: "1726176956"])
     }
 }
 
