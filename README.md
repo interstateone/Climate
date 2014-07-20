@@ -3,7 +3,7 @@ Climate
 
 A little Swift app to display the latest environment data from an [AirPi](http://airpi.es)
 
-<img src="preview.png" width="320" height="568" />
+<img src="preview.png" width="325" height="682" />
 
 ## Usage
 Enter your Xively API key and feed ID in the AppDelegate where defaults are registered. The app will subscribe to the changes that get pushed down from Xively to your iOS device.
