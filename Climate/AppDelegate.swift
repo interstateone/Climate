@@ -13,8 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
-        _setupAppearance()
-        _setupDefaults()
+        setupAppearance()
+        setupDefaults()
         XivelyAPI.defaultAPI().apiKey = NSUserDefaults.standardUserDefaults().valueForKey(SettingsAPIKeyKey) as NSString
 
         return true
@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // Private
     
-    func _setupAppearance() {
+    private func setupAppearance() {
         let titleBarAttributes = NSMutableDictionary(dictionary:UINavigationBar.appearance().titleTextAttributes)
         titleBarAttributes[NSFontAttributeName] = UIFont(name:"AvenirNext-Bold", size:16)
         titleBarAttributes[NSForegroundColorAttributeName] = UIColor.lightGrayColor()
@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIBarButtonItem.appearance().setTitleTextAttributes(barButtonAttributes, forState: .Normal)
     }
     
-    func _setupDefaults() {
+    private func setupDefaults() {
         NSUserDefaults.standardUserDefaults().registerDefaults([SettingsAPIKeyKey: "MW49RcKFip8v8oxaZ7BQsfhE42FBhThL42lPuQFoGyZBe66g", SettingsFeedIDKey: "1726176956"])
     }
 }

@@ -12,8 +12,8 @@ let SettingsAPIKeyKey = "SettingsAPIKey"
 let SettingsFeedIDKey = "SettingsFeedID"
 
 class SettingsViewController: UITableViewController, UITableViewDelegate, UITextFieldDelegate {
-    @IBOutlet var apiKeyTextField: UITextField
-    @IBOutlet var feedIDTextField: UITextField
+    @IBOutlet var apiKeyTextField: UITextField!
+    @IBOutlet var feedIDTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UIText
         }
     }
     
-    // UITextFieldDelegate
+    // MARK: UITextFieldDelegate
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         switch textField {
@@ -41,7 +41,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UIText
         return true
     }
 
-    // Actions
+    // MARK: Actions
     
     @IBAction func dismissSettings(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)

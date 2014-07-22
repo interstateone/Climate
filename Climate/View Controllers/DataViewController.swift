@@ -11,13 +11,13 @@ import UIKit
 let DataLastUpdatedKey = "DataLastUpdated"
 
 class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyModelDelegate, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet var dataTableView: UITableView
-    @IBOutlet var lastUpdatedButton: UIButton
+    @IBOutlet var dataTableView: UITableView!
+    @IBOutlet var lastUpdatedButton: UIButton!
     
-    let feed = XivelyFeedModel()
-    let lastUpdatedFormatter = TTTTimeIntervalFormatter()
-    let valueFormatter = NSNumberFormatter()
-    var updateLabelTimer: NSTimer?
+    private let feed = XivelyFeedModel()
+    private let lastUpdatedFormatter = TTTTimeIntervalFormatter()
+    private let valueFormatter = NSNumberFormatter()
+    private var updateLabelTimer: NSTimer?
     
     init(coder aDecoder: NSCoder!)  {
         valueFormatter.roundingMode = .RoundHalfUp
@@ -32,46 +32,46 @@ class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyMo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        _setupFeed()
+        setupFeed()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        _setupFeed()
-        updateLabelTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "_updateLastUpdatedLabel", userInfo: nil, repeats: true);
+        setupFeed()
+        updateLabelTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateLastUpdatedLabel", userInfo: nil, repeats: true);
         updateLabelTimer!.tolerance = 0.5
     }
     
     override func viewDidDisappear(animated: Bool) {
-        _tearDownFeed()
+        tearDownFeed()
         updateLabelTimer?.invalidate()
         updateLabelTimer = nil
     }
     
-    // Xively Delegates
+    // MARK: Xively Delegates
     
     func modelUpdatedViaSubscription(model: XivelyModel!) {
         NSUserDefaults.standardUserDefaults().setValue(NSDate.date(), forKey: DataLastUpdatedKey)
-        _updateUI()
-        _updateLastUpdatedLabel()
+        updateUI()
+        updateLastUpdatedLabel()
     }
     
     func modelDidFetch(model: XivelyModel!) {
         NSUserDefaults.standardUserDefaults().setValue(NSDate.date(), forKey: DataLastUpdatedKey)
-        _updateUI()
-        _updateLastUpdatedLabel()
+        updateUI()
+        updateLastUpdatedLabel()
     }
     
-    // UITableViewDataSource
+    // MARK: UITableViewDataSource
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         let cell = tableView.dequeueReusableCellWithIdentifier("DataCell", forIndexPath: indexPath) as DataCell
         
         let stream = self.feed.datastreamCollection.datastreams[indexPath.row] as XivelyDatastreamModel
-        cell.nameLabel.text = _humanizeStreamName(stream.info["id"] as NSString)
+        cell.nameLabel.text = humanizeStreamName(stream.info["id"] as NSString)
         let unit = stream.info["unit"] as NSDictionary
         let symbol = unit["symbol"] as NSString
-        cell.valueLabel.attributedText = _formatValue((stream.info["current_value"] as NSString).floatValue, symbol: symbol)
+        cell.valueLabel.attributedText = formatValue((stream.info["current_value"] as NSString).floatValue, symbol: symbol)
         
         return cell
     }
@@ -81,7 +81,7 @@ class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyMo
         return streamCount
     }
     
-    // Actions
+    // MARK: Actions
     
     @IBAction func fetchFeed(sender: AnyObject?) {
         if !feed.isSubscribed {
@@ -89,9 +89,9 @@ class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyMo
         }
     }
     
-    // Private
+    // MARK: Private
     
-    func _setupFeed() {
+    private func setupFeed() {
         feed.info["id"] = NSUserDefaults.standardUserDefaults().valueForKey(SettingsFeedIDKey)
         
         self.fetchFeed(nil)
@@ -100,27 +100,27 @@ class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyMo
         }
     }
     
-    func _tearDownFeed() {
+    private func tearDownFeed() {
         if (feed.isSubscribed) {
             feed.unsubscribe()
         }
     }
     
-    func _updateUI() {
+    private func updateUI() {
         self.dataTableView.reloadData()
     }
     
-    func _humanizeStreamName(streamName: String) -> String {
+    private func humanizeStreamName(streamName: String) -> String {
         return join(" ", streamName.componentsSeparatedByString("_"))
     }
     
-    func _formatValue(value: Float, symbol: String) -> NSAttributedString {
+    private func formatValue(value: Float, symbol: String) -> NSAttributedString {
         let string = NSMutableAttributedString(string: "\(valueFormatter.stringFromNumber(value)) \(symbol)")
         string.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor(), range: NSMakeRange(string.length - countElements(symbol), countElements(symbol)))
         return string
     }
     
-    func _updateLastUpdatedLabel() {
+    internal func updateLastUpdatedLabel() {
         if feed.isSubscribed {
             lastUpdatedButton.setTitle("Auto-updating", forState: .Normal)
         }

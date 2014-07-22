@@ -9,6 +9,6 @@
 import UIKit
 
 class DataCell: UITableViewCell {
-    @IBOutlet var nameLabel: UILabel
-    @IBOutlet var valueLabel: UILabel
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var valueLabel: UILabel!
 }
