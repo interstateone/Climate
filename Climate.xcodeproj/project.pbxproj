@@ -52,7 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C04ED0E93A7F42B1B9062F35 /* Pods-Climate.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Climate.xcconfig"; path = "Pods/Pods-Climate.xcconfig"; sourceTree = "<group>"; };
+		111B68B3C72CBDF4BA8F7DFC /* Pods-Climate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Climate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Climate/Pods-Climate.release.xcconfig"; sourceTree = "<group>"; };
 		CA32F808197A087C00B8CAD6 /* DataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataCell.swift; path = Cells/DataCell.swift; sourceTree = "<group>"; };
 		CA591AAE1979E44B002555AF /* Climate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Climate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA591AB21979E44B002555AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +92,7 @@
 		CA8742E81979F603001DDAB2 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		CA9D4129197A1966002932EE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E503AE8B6FBA42E79B4073F1 /* libPods-Climate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Climate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8409E35A9884BACA178594C /* Pods-Climate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Climate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Climate/Pods-Climate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +115,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		629C1FF3D635C6EF2BA5F461 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E8409E35A9884BACA178594C /* Pods-Climate.debug.xcconfig */,
+				111B68B3C72CBDF4BA8F7DFC /* Pods-Climate.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6DD5723E822E4EE9B4935E5B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,8 +138,8 @@
 				CA591AB01979E44B002555AF /* Climate */,
 				CA591AC31979E44B002555AF /* ClimateTests */,
 				CA591AAF1979E44B002555AF /* Products */,
-				C04ED0E93A7F42B1B9062F35 /* Pods-Climate.xcconfig */,
 				6DD5723E822E4EE9B4935E5B /* Frameworks */,
+				629C1FF3D635C6EF2BA5F461 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -352,7 +362,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Climate-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Climate/Pods-Climate-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		67C890984E5A4B1EAE6171AA /* Check Pods Manifest.lock */ = {
@@ -503,7 +513,7 @@
 		};
 		CA591ACB1979E44B002555AF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C04ED0E93A7F42B1B9062F35 /* Pods-Climate.xcconfig */;
+			baseConfigurationReference = E8409E35A9884BACA178594C /* Pods-Climate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -511,13 +521,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Climate/Climate-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		CA591ACC1979E44B002555AF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C04ED0E93A7F42B1B9062F35 /* Pods-Climate.xcconfig */;
+			baseConfigurationReference = 111B68B3C72CBDF4BA8F7DFC /* Pods-Climate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -525,6 +536,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Climate/Climate-Bridging-Header.h";
 			};
 			name = Release;
