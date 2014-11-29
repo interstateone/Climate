@@ -19,7 +19,7 @@ class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyMo
     private let valueFormatter = NSNumberFormatter()
     private var updateLabelTimer: NSTimer?
     
-    init(coder aDecoder: NSCoder!)  {
+    required init(coder aDecoder: NSCoder)  {
         valueFormatter.roundingMode = .RoundHalfUp
         valueFormatter.maximumFractionDigits = 0
         valueFormatter.groupingSeparator = " "
@@ -51,32 +51,35 @@ class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyMo
     // MARK: Xively Delegates
     
     func modelUpdatedViaSubscription(model: XivelyModel!) {
-        NSUserDefaults.standardUserDefaults().setValue(NSDate.date(), forKey: DataLastUpdatedKey)
+        NSUserDefaults.standardUserDefaults().setValue(NSDate(), forKey: DataLastUpdatedKey)
         updateUI()
         updateLastUpdatedLabel()
     }
     
     func modelDidFetch(model: XivelyModel!) {
-        NSUserDefaults.standardUserDefaults().setValue(NSDate.date(), forKey: DataLastUpdatedKey)
+        NSUserDefaults.standardUserDefaults().setValue(NSDate(), forKey: DataLastUpdatedKey)
         updateUI()
         updateLastUpdatedLabel()
     }
     
     // MARK: UITableViewDataSource
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("DataCell", forIndexPath: indexPath) as DataCell
         
         let stream = self.feed.datastreamCollection.datastreams[indexPath.row] as XivelyDatastreamModel
         cell.nameLabel.text = humanizeStreamName(stream.info["id"] as NSString)
         let unit = stream.info["unit"] as NSDictionary
         let symbol = unit["symbol"] as NSString
-        cell.valueLabel.attributedText = formatValue((stream.info["current_value"] as NSString).floatValue, symbol: symbol)
+
+        let valueString = (stream.info["current_value"] as NSString) ?? "0"
+        let value = valueString.floatValue
+        cell.valueLabel.attributedText = formatValue(value, symbol: symbol)
         
         return cell
     }
-    
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int  {
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let streamCount = self.feed.datastreamCollection.datastreams.count
         return streamCount
     }
@@ -115,7 +118,8 @@ class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyMo
     }
     
     private func formatValue(value: Float, symbol: String) -> NSAttributedString {
-        let string = NSMutableAttributedString(string: "\(valueFormatter.stringFromNumber(value)) \(symbol)")
+        let formattedString = valueFormatter.stringFromNumber(value) ?? "0"
+        let string = NSMutableAttributedString(string: "\(formattedString) \(symbol)")
         string.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor(), range: NSMakeRange(string.length - countElements(symbol), countElements(symbol)))
         return string
     }
@@ -125,7 +129,7 @@ class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyMo
             lastUpdatedButton.setTitle("Auto-updating", forState: .Normal)
         }
         else if let date = NSUserDefaults.standardUserDefaults().valueForKey(DataLastUpdatedKey) as? NSDate {
-            lastUpdatedButton.setTitle("Last updated \(lastUpdatedFormatter.stringForTimeIntervalFromDate(NSDate.date(), toDate: date))", forState: .Normal)
+            lastUpdatedButton.setTitle("Last updated \(lastUpdatedFormatter.stringForTimeIntervalFromDate(NSDate(), toDate: date))", forState: .Normal)
         }
     }
 }
