@@ -30,6 +30,7 @@
 		CAB29E151A299C6600064605 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB29E141A299C6500064605 /* TodayViewController.swift */; };
 		CAB29E171A299C6600064605 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB29E161A299C6600064605 /* MainInterface.storyboard */; };
 		CAB29E1A1A299C6600064605 /* ClimateWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CAB29E0E1A299C6500064605 /* ClimateWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CAB29E201A299E5A00064605 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB29E1F1A299E5A00064605 /* Feed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		CAB29E131A299C6500064605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAB29E141A299C6500064605 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		CAB29E161A299C6600064605 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		CAB29E1F1A299E5A00064605 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Feed.swift; path = Models/Feed.swift; sourceTree = "<group>"; };
 		E503AE8B6FBA42E79B4073F1 /* libPods-Climate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Climate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8409E35A9884BACA178594C /* Pods-Climate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Climate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Climate/Pods-Climate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +197,7 @@
 			children = (
 				CA591AB31979E44B002555AF /* AppDelegate.swift */,
 				CA591AB71979E44B002555AF /* Main.storyboard */,
+				CAB29E211A299E6100064605 /* Models */,
 				CA9D4128197A158A002932EE /* View Controllers */,
 				CA9D4127197A14C7002932EE /* Cells */,
 				CA591ABA1979E44B002555AF /* Images.xcassets */,
@@ -306,6 +309,14 @@
 				CAB29E131A299C6500064605 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CAB29E211A299E6100064605 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CAB29E1F1A299E5A00064605 /* Feed.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA9D412A197A1966002932EE /* SettingsViewController.swift in Sources */,
+				CAB29E201A299E5A00064605 /* Feed.swift in Sources */,
 				CA32F809197A087C00B8CAD6 /* DataCell.swift in Sources */,
 				CA591AF61979E98E002555AF /* XivelyRequestable.m in Sources */,
 				CA591AF71979E98E002555AF /* XivelySubscribable.m in Sources */,

@@ -10,11 +10,12 @@ import UIKit
 
 let DataLastUpdatedKey = "DataLastUpdated"
 
-class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyModelDelegate, UITableViewDelegate, UITableViewDataSource {
+class DataViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var dataTableView: UITableView!
     @IBOutlet var lastUpdatedButton: UIButton!
-    
-    private let feed = XivelyFeedModel()
+
+    private var feed: Feed?
+
     private let lastUpdatedFormatter = TTTTimeIntervalFormatter()
     private let valueFormatter = NSNumberFormatter()
     private var updateLabelTimer: NSTimer?
@@ -25,92 +26,71 @@ class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyMo
         valueFormatter.groupingSeparator = " "
         valueFormatter.groupingSize = 3
         valueFormatter.usesGroupingSeparator = true
-        
+
         super.init(coder: aDecoder)
-        feed.delegate = self
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupFeed()
+        if let feedID = NSUserDefaults.standardUserDefaults().valueForKey(SettingsFeedIDKey) as? NSString {
+            feed = Feed(feedID: feedID, handler: { [weak self] in
+                if let viewController = self {
+                    viewController.updateUI()
+                    viewController.updateLastUpdatedLabel()
+                }
+            })
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        setupFeed()
         updateLabelTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateLastUpdatedLabel", userInfo: nil, repeats: true);
         updateLabelTimer!.tolerance = 0.5
+
+        if let feed = feed {
+            feed.fetchIfNotSubscribed()
+        }
     }
     
     override func viewDidDisappear(animated: Bool) {
-        tearDownFeed()
         updateLabelTimer?.invalidate()
         updateLabelTimer = nil
-    }
-    
-    // MARK: Xively Delegates
-    
-    func modelUpdatedViaSubscription(model: XivelyModel!) {
-        NSUserDefaults.standardUserDefaults().setValue(NSDate(), forKey: DataLastUpdatedKey)
-        updateUI()
-        updateLastUpdatedLabel()
-    }
-    
-    func modelDidFetch(model: XivelyModel!) {
-        NSUserDefaults.standardUserDefaults().setValue(NSDate(), forKey: DataLastUpdatedKey)
-        updateUI()
-        updateLastUpdatedLabel()
     }
     
     // MARK: UITableViewDataSource
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("DataCell", forIndexPath: indexPath) as DataCell
-        
-        let stream = self.feed.datastreamCollection.datastreams[indexPath.row] as XivelyDatastreamModel
-        cell.nameLabel.text = humanizeStreamName(stream.info["id"] as NSString)
-        let unit = stream.info["unit"] as NSDictionary
-        let symbol = unit["symbol"] as NSString
 
-        let valueString = (stream.info["current_value"] as NSString) ?? "0"
-        let value = valueString.floatValue
-        cell.valueLabel.attributedText = formatValue(value, symbol: symbol)
+        if let feed = feed {
+            let stream = feed.streams[indexPath.row] as XivelyDatastreamModel
+            cell.nameLabel.text = humanizeStreamName(stream.info["id"] as NSString)
+            let unit = stream.info["unit"] as NSDictionary
+            let symbol = unit["symbol"] as NSString
+
+            let valueString = (stream.info["current_value"] as NSString) ?? "0"
+            let value = valueString.floatValue
+            cell.valueLabel.attributedText = formatValue(value, symbol: symbol)
+        }
         
         return cell
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let streamCount = self.feed.datastreamCollection.datastreams.count
+        let streamCount = feed?.streams.count ?? 0
         return streamCount
     }
     
     // MARK: Actions
     
     @IBAction func fetchFeed(sender: AnyObject?) {
-        if !feed.isSubscribed {
-            feed.fetch()
-        }
+        feed?.fetchIfNotSubscribed()
     }
     
     // MARK: Private
     
-    private func setupFeed() {
-        feed.info["id"] = NSUserDefaults.standardUserDefaults().valueForKey(SettingsFeedIDKey)
-        
-        self.fetchFeed(nil)
-        if (!feed.isSubscribed) {
-            feed.subscribe()
-        }
-    }
-    
-    private func tearDownFeed() {
-        if (feed.isSubscribed) {
-            feed.unsubscribe()
-        }
-    }
-    
     private func updateUI() {
-        self.dataTableView.reloadData()
+        dataTableView.reloadData()
     }
     
     private func humanizeStreamName(streamName: String) -> String {
@@ -125,7 +105,7 @@ class DataViewController: UIViewController, XivelySubscribableDelegate, XivelyMo
     }
     
     internal func updateLastUpdatedLabel() {
-        if feed.isSubscribed {
+        if feed?.isSubscribed ?? false {
             lastUpdatedButton.setTitle("Auto-updating", forState: .Normal)
         }
         else if let date = NSUserDefaults.standardUserDefaults().valueForKey(DataLastUpdatedKey) as? NSDate {

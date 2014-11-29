@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupAppearance()
         setupDefaults()
         XivelyAPI.defaultAPI().apiKey = NSUserDefaults.standardUserDefaults().valueForKey(SettingsAPIKeyKey) as NSString
-
         return true
     }
     
