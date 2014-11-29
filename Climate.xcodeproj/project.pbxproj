@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5B37FBD91FF44266A51E20CB /* libPods-Climate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E503AE8B6FBA42E79B4073F1 /* libPods-Climate.a */; };
 		CA32F809197A087C00B8CAD6 /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA32F808197A087C00B8CAD6 /* DataCell.swift */; };
+		CA5911ED1A2A86DF009A3005 /* FeedFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5911EC1A2A86DF009A3005 /* FeedFormatter.swift */; };
+		CA5911EE1A2A875F009A3005 /* FeedFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5911EC1A2A86DF009A3005 /* FeedFormatter.swift */; };
 		CA591AB41979E44B002555AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA591AB31979E44B002555AF /* AppDelegate.swift */; };
 		CA591AB61979E44B002555AF /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA591AB51979E44B002555AF /* DataViewController.swift */; };
 		CA591AB91979E44B002555AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA591AB71979E44B002555AF /* Main.storyboard */; };
@@ -29,8 +31,22 @@
 		CAB29E101A299C6500064605 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB29E0F1A299C6500064605 /* NotificationCenter.framework */; };
 		CAB29E151A299C6600064605 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB29E141A299C6500064605 /* TodayViewController.swift */; };
 		CAB29E171A299C6600064605 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB29E161A299C6600064605 /* MainInterface.storyboard */; };
-		CAB29E1A1A299C6600064605 /* ClimateWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CAB29E0E1A299C6500064605 /* ClimateWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CAB29E201A299E5A00064605 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB29E1F1A299E5A00064605 /* Feed.swift */; };
+		CAB29E231A29A81D00064605 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D4129197A1966002932EE /* SettingsViewController.swift */; };
+		CAB29E251A29A8A200064605 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB29E1F1A299E5A00064605 /* Feed.swift */; };
+		CAB29E271A29A8B100064605 /* libPods-Climate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB29E261A29A8B100064605 /* libPods-Climate.a */; };
+		CAB29E2A1A29A8D400064605 /* XivelyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591AD61979E98E002555AF /* XivelyAPI.m */; };
+		CAB29E2C1A29A8D400064605 /* XivelyDatapointCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591AD81979E98E002555AF /* XivelyDatapointCollection.m */; };
+		CAB29E2F1A29A8D400064605 /* XivelyDatapointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591ADB1979E98E002555AF /* XivelyDatapointModel.m */; };
+		CAB29E311A29A8D400064605 /* XivelyDatastreamCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591ADD1979E98E002555AF /* XivelyDatastreamCollection.m */; };
+		CAB29E331A29A8D400064605 /* XivelyDatastreamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591ADF1979E98E002555AF /* XivelyDatastreamModel.m */; };
+		CAB29E351A29A8D400064605 /* XivelyFeedCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591AE11979E98E002555AF /* XivelyFeedCollection.m */; };
+		CAB29E381A29A8D400064605 /* XivelyFeedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591AE41979E98E002555AF /* XivelyFeedModel.m */; };
+		CAB29E3A1A29A8D400064605 /* XivelyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591AE61979E98E002555AF /* XivelyModel.m */; };
+		CAB29E3D1A29A8D400064605 /* XivelyRequestable.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591AE91979E98E002555AF /* XivelyRequestable.m */; };
+		CAB29E3F1A29A8D400064605 /* XivelySubscribable.m in Sources */ = {isa = PBXBuildFile; fileRef = CA591AEB1979E98E002555AF /* XivelySubscribable.m */; };
+		CAB29E411A29A93000064605 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8742E81979F603001DDAB2 /* libicucore.dylib */; };
+		CAB29E451A29AAA100064605 /* ClimateWidget.appex in Copy App Extensions */ = {isa = PBXBuildFile; fileRef = CAB29E0E1A299C6500064605 /* ClimateWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,15 +77,15 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CAB29E1E1A299C6600064605 /* Embed App Extensions */ = {
+		CAB29E441A29AA9800064605 /* Copy App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				CAB29E1A1A299C6600064605 /* ClimateWidget.appex in Embed App Extensions */,
+				CAB29E451A29AAA100064605 /* ClimateWidget.appex in Copy App Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Copy App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -77,6 +93,7 @@
 /* Begin PBXFileReference section */
 		111B68B3C72CBDF4BA8F7DFC /* Pods-Climate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Climate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Climate/Pods-Climate.release.xcconfig"; sourceTree = "<group>"; };
 		CA32F808197A087C00B8CAD6 /* DataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataCell.swift; path = Cells/DataCell.swift; sourceTree = "<group>"; };
+		CA5911EC1A2A86DF009A3005 /* FeedFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedFormatter.swift; sourceTree = "<group>"; };
 		CA591AAE1979E44B002555AF /* Climate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Climate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA591AB21979E44B002555AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA591AB31979E44B002555AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +137,10 @@
 		CAB29E141A299C6500064605 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		CAB29E161A299C6600064605 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		CAB29E1F1A299E5A00064605 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Feed.swift; path = Models/Feed.swift; sourceTree = "<group>"; };
+		CAB29E261A29A8B100064605 /* libPods-Climate.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Climate.a"; path = "Pods/build/Debug-iphoneos/libPods-Climate.a"; sourceTree = "<group>"; };
+		CAB29E421A29A97300064605 /* ClimateWidget-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClimateWidget-Bridging-Header.h"; sourceTree = "<group>"; };
+		CAB29E461A29AB7300064605 /* Climate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Climate.entitlements; sourceTree = "<group>"; };
+		CAB29E471A29AB9800064605 /* ClimateWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ClimateWidget.entitlements; sourceTree = "<group>"; };
 		E503AE8B6FBA42E79B4073F1 /* libPods-Climate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Climate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8409E35A9884BACA178594C /* Pods-Climate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Climate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Climate/Pods-Climate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +166,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAB29E411A29A93000064605 /* libicucore.dylib in Frameworks */,
+				CAB29E271A29A8B100064605 /* libPods-Climate.a in Frameworks */,
 				CAB29E101A299C6500064605 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +187,7 @@
 		6DD5723E822E4EE9B4935E5B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CAB29E261A29A8B100064605 /* libPods-Climate.a */,
 				E503AE8B6FBA42E79B4073F1 /* libPods-Climate.a */,
 				CAB29E0F1A299C6500064605 /* NotificationCenter.framework */,
 			);
@@ -195,6 +219,7 @@
 		CA591AB01979E44B002555AF /* Climate */ = {
 			isa = PBXGroup;
 			children = (
+				CAB29E461A29AB7300064605 /* Climate.entitlements */,
 				CA591AB31979E44B002555AF /* AppDelegate.swift */,
 				CA591AB71979E44B002555AF /* Main.storyboard */,
 				CAB29E211A299E6100064605 /* Models */,
@@ -296,9 +321,11 @@
 		CAB29E111A299C6500064605 /* ClimateWidget */ = {
 			isa = PBXGroup;
 			children = (
+				CAB29E471A29AB9800064605 /* ClimateWidget.entitlements */,
 				CAB29E141A299C6500064605 /* TodayViewController.swift */,
 				CAB29E161A299C6600064605 /* MainInterface.storyboard */,
 				CAB29E121A299C6500064605 /* Supporting Files */,
+				CAB29E421A29A97300064605 /* ClimateWidget-Bridging-Header.h */,
 			);
 			path = ClimateWidget;
 			sourceTree = "<group>";
@@ -315,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				CAB29E1F1A299E5A00064605 /* Feed.swift */,
+				CA5911EC1A2A86DF009A3005 /* FeedFormatter.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -332,7 +360,8 @@
 				CA591AAC1979E44B002555AF /* Resources */,
 				CA591B191979EAA9002555AF /* Embed Frameworks */,
 				3505387F4C074181BE781F76 /* Copy Pods Resources */,
-				CAB29E1E1A299C6600064605 /* Embed App Extensions */,
+				CAB29E441A29AA9800064605 /* Copy App Extensions */,
+				CAB29E481A29ACF000064605 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -391,6 +420,11 @@
 					CA591AAD1979E44B002555AF = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = Z2R9WCWER2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					CA591ABF1979E44B002555AF = {
 						CreatedOnToolsVersion = 6.0;
@@ -399,6 +433,11 @@
 					CAB29E0D1A299C6500064605 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = Z2R9WCWER2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -480,6 +519,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		CAB29E481A29ACF000064605 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -493,6 +545,7 @@
 				CA591AF61979E98E002555AF /* XivelyRequestable.m in Sources */,
 				CA591AF71979E98E002555AF /* XivelySubscribable.m in Sources */,
 				CA591AF01979E98E002555AF /* XivelyDatapointModel.m in Sources */,
+				CA5911ED1A2A86DF009A3005 /* FeedFormatter.swift in Sources */,
 				CA591AB61979E44B002555AF /* DataViewController.swift in Sources */,
 				CA591AF51979E98E002555AF /* XivelyModel.m in Sources */,
 				CA591AF31979E98E002555AF /* XivelyFeedCollection.m in Sources */,
@@ -517,7 +570,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAB29E2A1A29A8D400064605 /* XivelyAPI.m in Sources */,
+				CAB29E2C1A29A8D400064605 /* XivelyDatapointCollection.m in Sources */,
+				CAB29E2F1A29A8D400064605 /* XivelyDatapointModel.m in Sources */,
+				CAB29E311A29A8D400064605 /* XivelyDatastreamCollection.m in Sources */,
+				CAB29E331A29A8D400064605 /* XivelyDatastreamModel.m in Sources */,
+				CAB29E351A29A8D400064605 /* XivelyFeedCollection.m in Sources */,
+				CA5911EE1A2A875F009A3005 /* FeedFormatter.swift in Sources */,
+				CAB29E381A29A8D400064605 /* XivelyFeedModel.m in Sources */,
+				CAB29E3A1A29A8D400064605 /* XivelyModel.m in Sources */,
+				CAB29E3D1A29A8D400064605 /* XivelyRequestable.m in Sources */,
+				CAB29E3F1A29A8D400064605 /* XivelySubscribable.m in Sources */,
 				CAB29E151A299C6600064605 /* TodayViewController.swift in Sources */,
+				CAB29E251A29A8A200064605 /* Feed.swift in Sources */,
+				CAB29E231A29A81D00064605 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,6 +697,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Climate/Climate.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -650,6 +717,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Climate/Climate.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -699,7 +767,9 @@
 		};
 		CAB29E1B1A299C6600064605 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8409E35A9884BACA178594C /* Pods-Climate.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ClimateWidget/ClimateWidget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -709,21 +779,35 @@
 				INFOPLIST_FILE = ClimateWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ClimateWidget/ClimateWidget-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		CAB29E1C1A299C6600064605 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 111B68B3C72CBDF4BA8F7DFC /* Pods-Climate.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ClimateWidget/ClimateWidget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ClimateWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ClimateWidget/ClimateWidget-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -764,6 +848,7 @@
 				CAB29E1C1A299C6600064605 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

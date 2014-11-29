@@ -10,6 +10,7 @@ import UIKit
 
 let SettingsAPIKeyKey = "SettingsAPIKey"
 let SettingsFeedIDKey = "SettingsFeedID"
+let DataLastUpdatedKey = "DataLastUpdated"
 
 class SettingsViewController: UITableViewController, UITableViewDelegate, UITextFieldDelegate {
     @IBOutlet var apiKeyTextField: UITextField!

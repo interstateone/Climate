@@ -36,7 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setupDefaults() {
-        NSUserDefaults.standardUserDefaults().registerDefaults([SettingsAPIKeyKey: "MW49RcKFip8v8oxaZ7BQsfhE42FBhThL42lPuQFoGyZBe66g", SettingsFeedIDKey: "1726176956"])
+        if let groupUserDefaults = NSUserDefaults(suiteName: "group.brandonevans.Climate") {
+            groupUserDefaults.registerDefaults([SettingsAPIKeyKey: "MW49RcKFip8v8oxaZ7BQsfhE42FBhThL42lPuQFoGyZBe66g", SettingsFeedIDKey: "1726176956"])
+        }
     }
 }
 
