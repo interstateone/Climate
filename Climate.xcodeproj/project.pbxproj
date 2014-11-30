@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B37FBD91FF44266A51E20CB /* libPods-Climate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E503AE8B6FBA42E79B4073F1 /* libPods-Climate.a */; };
+		CA279B2B1A2ACD6800C692AD /* ClimateWidgetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA279B2A1A2ACD6800C692AD /* ClimateWidgetCell.swift */; };
 		CA32F809197A087C00B8CAD6 /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA32F808197A087C00B8CAD6 /* DataCell.swift */; };
 		CA5911ED1A2A86DF009A3005 /* FeedFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5911EC1A2A86DF009A3005 /* FeedFormatter.swift */; };
 		CA5911EE1A2A875F009A3005 /* FeedFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5911EC1A2A86DF009A3005 /* FeedFormatter.swift */; };
@@ -92,6 +93,7 @@
 
 /* Begin PBXFileReference section */
 		111B68B3C72CBDF4BA8F7DFC /* Pods-Climate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Climate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Climate/Pods-Climate.release.xcconfig"; sourceTree = "<group>"; };
+		CA279B2A1A2ACD6800C692AD /* ClimateWidgetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClimateWidgetCell.swift; sourceTree = "<group>"; };
 		CA32F808197A087C00B8CAD6 /* DataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataCell.swift; path = Cells/DataCell.swift; sourceTree = "<group>"; };
 		CA5911EC1A2A86DF009A3005 /* FeedFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedFormatter.swift; sourceTree = "<group>"; };
 		CA591AAE1979E44B002555AF /* Climate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Climate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -326,6 +328,7 @@
 				CAB29E161A299C6600064605 /* MainInterface.storyboard */,
 				CAB29E121A299C6500064605 /* Supporting Files */,
 				CAB29E421A29A97300064605 /* ClimateWidget-Bridging-Header.h */,
+				CA279B2A1A2ACD6800C692AD /* ClimateWidgetCell.swift */,
 			);
 			path = ClimateWidget;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				CAB29E2F1A29A8D400064605 /* XivelyDatapointModel.m in Sources */,
 				CAB29E311A29A8D400064605 /* XivelyDatastreamCollection.m in Sources */,
 				CAB29E331A29A8D400064605 /* XivelyDatastreamModel.m in Sources */,
+				CA279B2B1A2ACD6800C692AD /* ClimateWidgetCell.swift in Sources */,
 				CAB29E351A29A8D400064605 /* XivelyFeedCollection.m in Sources */,
 				CA5911EE1A2A875F009A3005 /* FeedFormatter.swift in Sources */,
 				CAB29E381A29A8D400064605 /* XivelyFeedModel.m in Sources */,

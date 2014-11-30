@@ -15,7 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         setupAppearance()
         setupDefaults()
-        XivelyAPI.defaultAPI().apiKey = NSUserDefaults.standardUserDefaults().valueForKey(SettingsAPIKeyKey) as NSString
+
+        if let groupUserDefaults = NSUserDefaults(suiteName: "group.brandonevans.Climate") {
+            XivelyAPI.defaultAPI().apiKey = groupUserDefaults.valueForKey(SettingsAPIKeyKey) as? NSString
+        }
+
         return true
     }
     

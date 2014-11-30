@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Today View Controller-->
@@ -13,28 +14,75 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
-                                <rect key="frame" x="20" y="8" width="280" height="21"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Hello World">
-                                        <attributes>
-                                            <color key="NSColor" cocoaTouchSystemColor="lightTextColor"/>
-                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5GZ-W4-Bg9">
+                                <rect key="frame" x="16" y="0.0" width="288" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="WW2-0Q-Wp0">
+                                    <size key="itemSize" width="96" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ClimateWidgetCell" id="Vgm-n1-vLm" customClass="ClimateWidgetCell" customModule="ClimateWidget" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="96" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hox-hl-NaO">
+                                                    <rect key="frame" x="0.0" y="8" width="96" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ω" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPL-bI-Ilz">
+                                                    <rect key="frame" x="0.0" y="41" width="96" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="duW-Qf-xEc">
+                                                    <rect key="frame" x="0.0" y="85" width="96" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="iPL-bI-Ilz" firstAttribute="leading" secondItem="Vgm-n1-vLm" secondAttribute="leadingMargin" constant="-8" id="1Jd-Q2-bWe"/>
+                                            <constraint firstItem="hox-hl-NaO" firstAttribute="leading" secondItem="Vgm-n1-vLm" secondAttribute="leadingMargin" constant="-8" id="3Ds-4e-5lS"/>
+                                            <constraint firstItem="duW-Qf-xEc" firstAttribute="leading" secondItem="Vgm-n1-vLm" secondAttribute="leadingMargin" constant="-8" id="A0G-ai-6MZ"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="duW-Qf-xEc" secondAttribute="trailing" constant="-8" id="JDu-fn-I0s"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="duW-Qf-xEc" secondAttribute="bottom" constant="-7.5" id="P56-bW-bV7"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="hox-hl-NaO" secondAttribute="trailing" constant="-8" id="Uef-oc-2St"/>
+                                            <constraint firstAttribute="centerY" secondItem="iPL-bI-Ilz" secondAttribute="centerY" constant="-1.25" id="Ymy-uS-j07"/>
+                                            <constraint firstItem="hox-hl-NaO" firstAttribute="top" secondItem="Vgm-n1-vLm" secondAttribute="topMargin" id="eOx-85-fbl"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="iPL-bI-Ilz" secondAttribute="trailing" constant="-8" id="se7-1R-nfV"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="duW-Qf-xEc" id="8oR-s6-CrE"/>
+                                            <outlet property="signLabel" destination="iPL-bI-Ilz" id="ymL-Vo-Pwk"/>
+                                            <outlet property="valueLabel" destination="hox-hl-NaO" id="gbN-aD-Lrn"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="M4Y-Lb-cyx" id="3m7-GU-Jlp"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" constant="8" symbolic="YES" id="0Q0-KW-PJ6"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="20" symbolic="YES" id="6Vq-gs-PHe"/>
-                            <constraint firstAttribute="trailing" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="20" symbolic="YES" id="L8K-9R-egU"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" symbolic="YES" id="mYS-Cv-VNx"/>
+                            <constraint firstItem="5GZ-W4-Bg9" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="0ee-I0-FbK"/>
+                            <constraint firstItem="5GZ-W4-Bg9" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="PgN-ET-ZWF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5GZ-W4-Bg9" secondAttribute="trailing" id="Q2I-FF-81I"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="5GZ-W4-Bg9" secondAttribute="bottom" id="yVA-gx-dR0"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -42,9 +90,9 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="37"/>
+                    <size key="freeformSize" width="320" height="100"/>
                     <connections>
-                        <outlet property="temperatureLabel" destination="GcN-lo-r42" id="CdA-kN-Hh3"/>
+                        <outlet property="collectionView" destination="5GZ-W4-Bg9" id="jeT-qP-yTo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>

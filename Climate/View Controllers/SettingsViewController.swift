@@ -18,26 +18,30 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UIText
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let apiKey = NSUserDefaults.standardUserDefaults().valueForKey(SettingsAPIKeyKey) as? NSString {
-            apiKeyTextField.text = apiKey
-        }
-        
-        if let feedID = NSUserDefaults.standardUserDefaults().valueForKey(SettingsFeedIDKey) as? NSString {
-            feedIDTextField.text = feedID
+
+        if let groupDefaults = NSUserDefaults(suiteName: "group.brandonevans.Climate") {
+            if let apiKey = groupDefaults.valueForKey(SettingsAPIKeyKey) as? NSString {
+                apiKeyTextField.text = apiKey
+            }
+            
+            if let feedID = groupDefaults.valueForKey(SettingsFeedIDKey) as? NSString {
+                feedIDTextField.text = feedID
+            }
         }
     }
     
     // MARK: UITextFieldDelegate
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
-        switch textField {
-        case apiKeyTextField:
-            NSUserDefaults.standardUserDefaults().setValue(textField.text, forKey: SettingsAPIKeyKey)
-        case feedIDTextField:
-            NSUserDefaults.standardUserDefaults().setValue(textField.text, forKey: SettingsFeedIDKey)
-        default:
-            println()
+        if let groupDefaults = NSUserDefaults(suiteName: "group.brandonevans.Climate") {
+            switch textField {
+            case apiKeyTextField:
+                groupDefaults.setValue(textField.text, forKey: SettingsAPIKeyKey)
+            case feedIDTextField:
+                groupDefaults.setValue(textField.text, forKey: SettingsFeedIDKey)
+            default:
+                println()
+            }
         }
         return true
     }
