@@ -31,6 +31,7 @@ class DataViewController: UIViewController, UITableViewDelegate, UITableViewData
                     if let viewController = self {
                         viewController.updateUI()
                         viewController.updateLastUpdatedLabel()
+                        viewController.updateStreams()
                     }
                 })
             }
@@ -94,6 +95,18 @@ class DataViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if let date = NSUserDefaults.standardUserDefaults().valueForKey(DataLastUpdatedKey) as? NSDate {
             lastUpdatedButton.setTitle("Last updated \(lastUpdatedFormatter.stringForTimeIntervalFromDate(NSDate(), toDate: date))", forState: .Normal)
+        }
+    }
+
+    private func updateStreams() {
+        if let feed = feed {
+            let streamKeys = map(feed.streams, { (stream) -> String in
+                let s = stream as XivelyDatastreamModel
+                return s.info["id"] as String
+            })
+            if let groupDefaults = NSUserDefaults(suiteName: "group.brandonevans.Climate") {
+                groupDefaults.setObject(streamKeys, forKey: "AvailableStreamNames")
+            }
         }
     }
 }
