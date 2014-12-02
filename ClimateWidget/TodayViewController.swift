@@ -15,6 +15,9 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     private var feed: Feed?
     private let feedFormatter = FeedFormatter()
     private var selectedStreams: [AnyObject]?
+    // feed will often be nil, or will have no streams
+    // Here we cache the previous stream count to prevent flickering of the cells during collection view reload
+    private var previousSelectedStreamsCount = 0
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -46,8 +49,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     // MARK: NCWidgetProviding
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
-        feed?.fetchIfNotSubscribed()
         updateUI()
+        feed?.fetchIfNotSubscribed()
 
         completionHandler(NCUpdateResult.NewData)
     }
@@ -55,7 +58,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
     // MARK: UICollectionViewDataSource
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let count = selectedStreams?.count ?? 0
+        let count = selectedStreams?.count ?? previousSelectedStreamsCount
         return count
     }
 
@@ -71,7 +74,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
             let value = valueString.floatValue
 
             if let valueLabel = cell.valueLabel {
-                valueLabel.text = feedFormatter.formatValue(value, symbol: "").string
+                valueLabel.text = feedFormatter.formatValue(value, symbol: "")
             }
             if let signLabel = cell.signLabel {
                 signLabel.text = symbol
@@ -94,10 +97,11 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
                         let s = stream as XivelyDatastreamModel
                         return contains(selectedStreamNames, s.info["id"] as String)
                     })
+                    previousSelectedStreamsCount = selectedStreams?.count ?? 0
                 }
             }
         }
 
-        collectionView.reloadData()
+        collectionView.reloadSections(NSIndexSet(index: 0))
     }
 }

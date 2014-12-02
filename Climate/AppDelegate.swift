@@ -26,16 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Private
     
     private func setupAppearance() {
-        let oldTitleBarAttributes = UINavigationBar.appearance().titleTextAttributes ?? Dictionary()
-        let titleBarAttributes = NSMutableDictionary(dictionary:oldTitleBarAttributes)
-        titleBarAttributes[NSFontAttributeName] = UIFont(name:"AvenirNext-Bold", size:16)
-        titleBarAttributes[NSForegroundColorAttributeName] = UIColor.lightGrayColor()
-        UINavigationBar.appearance().titleTextAttributes = titleBarAttributes;
-
         let oldBarButtonAttributes = UIBarButtonItem.appearance().titleTextAttributesForState(.Normal) ?? Dictionary();
         let barButtonAttributes = NSMutableDictionary(dictionary:oldBarButtonAttributes)
         barButtonAttributes[NSFontAttributeName] = UIFont(name:"Avenir Next", size:16)
-        barButtonAttributes[NSForegroundColorAttributeName] = UIColor.lightGrayColor()
         UIBarButtonItem.appearance().setTitleTextAttributes(barButtonAttributes, forState: .Normal)
     }
     

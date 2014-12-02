@@ -17,6 +17,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var apiKeyTextField: UITextField!
     @IBOutlet weak var feedIDTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
 
     private let streams: [String] = {
         if let groupDefaults = NSUserDefaults(suiteName: "group.brandonevans.Climate") {
@@ -30,6 +31,11 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let oldBarButtonAttributes = UIBarButtonItem.appearance().titleTextAttributesForState(.Normal) ?? Dictionary();
+        let barButtonAttributes = NSMutableDictionary(dictionary:oldBarButtonAttributes)
+        barButtonAttributes[NSFontAttributeName] = UIFont(name:"AvenirNext-DemiBold", size:16)
+        doneButton.setTitleTextAttributes(barButtonAttributes, forState: .Normal)
 
         if let groupDefaults = NSUserDefaults(suiteName: "group.brandonevans.Climate") {
             if let apiKey = groupDefaults.valueForKey(SettingsAPIKeyKey) as? NSString {
@@ -100,7 +106,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 
     // MARK: Actions
-    
+
     @IBAction func dismissSettings(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
