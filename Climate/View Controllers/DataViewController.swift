@@ -36,6 +36,15 @@ class DataViewController: UIViewController, UITableViewDelegate, UITableViewData
                 })
             }
         }
+
+        NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationDidBecomeActiveNotification, object: nil, queue: NSOperationQueue.currentQueue(), usingBlock: { [weak self] (notification) -> Void in
+            self?.feed?.subscribe()
+            return
+        })
+    }
+
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIApplicationDidBecomeActiveNotification, object: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
