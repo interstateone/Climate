@@ -37,6 +37,14 @@ class Feed: NSObject, XivelySubscribableDelegate, XivelyModelDelegate {
 
     // MARK: Public Methods
 
+    func subscribe() {
+        feed.subscribe()
+    }
+
+    func unsubscribe() {
+        feed.unsubscribe()
+    }
+
     func fetchIfNotSubscribed() {
         if !feed.isSubscribed {
             feed.fetch()

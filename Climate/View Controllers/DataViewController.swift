@@ -44,6 +44,7 @@ class DataViewController: UIViewController, UITableViewDelegate, UITableViewData
         updateLabelTimer!.tolerance = 0.5
 
         if let feed = feed {
+            feed.subscribe()
             feed.fetchIfNotSubscribed()
         }
     }
@@ -80,6 +81,7 @@ class DataViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: Actions
     
     @IBAction func fetchFeed(sender: AnyObject?) {
+        feed?.subscribe()
         feed?.fetchIfNotSubscribed()
     }
     
