@@ -25,10 +25,8 @@ class FeedFormatter: NSObject {
         return join(" ", streamName.componentsSeparatedByString("_"))
     }
 
-    func formatValue(value: Float, symbol: String) -> NSAttributedString {
-        let formattedString = valueFormatter.stringFromNumber(value) ?? "0"
-        let string = NSMutableAttributedString(string: "\(formattedString) \(symbol)")
-        string.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor(), range: NSMakeRange(string.length - countElements(symbol), countElements(symbol)))
-        return string
+    func formatValue(value: Float, symbol: String) -> String {
+        let value = valueFormatter.stringFromNumber(value) ?? "0"
+        return "\(value) \(symbol)"
     }
 }

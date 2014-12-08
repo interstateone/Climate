@@ -66,7 +66,7 @@ class DataViewController: UIViewController, UITableViewDelegate, UITableViewData
 
             let valueString = (stream.info["current_value"] as NSString) ?? "0"
             let value = valueString.floatValue
-            cell.valueLabel.attributedText = feedFormatter.formatValue(value, symbol: symbol)
+            cell.valueLabel.attributedText = formatValueColorized(value, symbol: symbol)
         }
         
         return cell
@@ -108,6 +108,13 @@ class DataViewController: UIViewController, UITableViewDelegate, UITableViewData
                 groupDefaults.setObject(streamKeys, forKey: "AvailableStreamNames")
             }
         }
+    }
+
+    private func formatValueColorized(value: Float, symbol: String) -> NSAttributedString {
+        let formattedString = feedFormatter.formatValue(value, symbol: symbol)
+        let attributedString = NSMutableAttributedString(string: formattedString)
+        attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGrayColor(), range: NSMakeRange(attributedString.length - countElements(symbol), countElements(symbol)))
+        return attributedString
     }
 }
 
