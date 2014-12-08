@@ -29,7 +29,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
         preferredContentSize = CGSize(width: 0, height: 80)
 
         if let groupUserDefaults = NSUserDefaults(suiteName: "group.brandonevans.Climate") {
-            groupUserDefaults.synchronize()
             XivelyAPI.defaultAPI().apiKey = groupUserDefaults.valueForKey(SettingsAPIKeyKey) as? NSString
             if let feedID = groupUserDefaults.valueForKey(SettingsFeedIDKey) as? NSString {
                 feed = Feed(feedID: "1726176956", handler: { [weak self] in
