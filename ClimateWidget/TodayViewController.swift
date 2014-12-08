@@ -93,9 +93,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UICollectionView
         if let groupDefaults = NSUserDefaults(suiteName: "group.brandonevans.Climate") {
             if let selectedStreamNames = groupDefaults.objectForKey(SettingsSelectedTodayStreamsKey) as? [String] {
                 if let feed = feed {
-                    selectedStreams = filter(feed.streams, { (stream) -> Bool in
-                        let s = stream as XivelyDatastreamModel
-                        return contains(selectedStreamNames, s.info["id"] as String)
+                    selectedStreams = filter(feed.streams as [XivelyDatastreamModel], { (stream) -> Bool in
+                        return contains(selectedStreamNames, stream.info["id"] as String)
                     })
                     previousSelectedStreamsCount = selectedStreams?.count ?? 0
                 }
